@@ -1,1 +1,3 @@
-## Flask-Survey Exercises
+## Flask-Survey Exercise
+
+Practice using Flask Sessions
