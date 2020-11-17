@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Flask Survey{% endblock %}
+
+{% block content %}
+
+<h1>Thank You!</h1>
+{% for category,msg in get_flashed_messages(with_categories=true) %}
+{% if category == 'completed' %}
+<p class="{{category}}">{{msg}}</p> 
+{% endif %}
+{% endfor %}
+{% endblock %}

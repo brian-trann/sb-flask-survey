@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Flask Survey{% endblock %}
+
+{% block content %}
+<h1>Questions</h1>
+{% for category,msg in get_flashed_messages(with_categories=true) %}
+{% if category == 'error' %}
+<p class="{{category}}">{{msg}}</p> 
+{% endif %}
+{% endfor %}
+
+<p>{{ question }}</p>
+
+<form action="/answer" method="POST">
+    {% for choice in choices %}
+    <input required name="question" type="radio" id="{{choice}}" value="{{choice}}">
+    <label for="{{choice}}">{{choice}}</label>
+    {% endfor %}
+    <button>Continue</button>
+</form>
+{% endblock %}
